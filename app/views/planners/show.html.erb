@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @planner.name %>
+</p>
+
+<p>
+  <strong>Photo url:</strong>
+  <%= @planner.photo_url %>
+</p>
+<style>
+.icon_today {
+  color: red;
+  text-shadow: .25em .25em orange;
+}
+.icon_this_week {
+  color: blue;
+  text-shadow: .25em .25em green;
+}
+</style>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Date</th>
+  </tr>
+  <% @planner.events.each do |event| %>
+    <tr>
+      <td><%= event.name %></td>
+      <td><%= how_soon_flag event %> <%= stew_date_format event.date %></td>
+    </tr>
+  <% end %>
+</table>
+<%= link_to 'Edit', edit_planner_path(@planner) %> |
+<%= link_to 'Back', planners_path %>

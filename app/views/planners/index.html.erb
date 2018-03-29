@@ -1,0 +1,108 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Planners</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th># of Events</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @planners.each do |planner| %>
+      <tr>
+        <td><%= planner.name %></td>
+        <td><%= planner.events.count %></td>
+        <td><%= link_to 'Show', planner %></td>
+        <td><%= link_to 'Edit', edit_planner_path(planner) %></td>
+        <td><%= link_to 'Destroy', planner, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<%= link_to 'New Planner', new_planner_path %>
+
+<h2>Paths and URLs</h2>
+<table>
+  <tr>
+    <th>Helper</th>
+    <th>Result</th>
+  </tr>
+  <tr>
+    <td>planners_path</td>
+    <td><%= planners_path %></td>
+  </tr>
+  <tr>
+    <td>new_planner_path</td>
+    <td><%= new_planner_path %></td>
+  </tr>
+  <tr>
+    <td>planner_path(1)</td>
+    <td><%= planner_path(1) %></td>
+  </tr>
+  <tr>
+    <td>planner_path(Planner.first)</td>
+    <td><%= planner_path(Planner.first) %></td>
+  </tr>
+  <tr>
+    <td>edit_planner_path(Planner.first)</td>
+    <td><%= edit_planner_path(Planner.first) %></td>
+  </tr>
+  <tr>
+    <td>planners_url</td>
+    <td><%= planners_url %></td>
+  </tr>
+</table>
+
+<h2>Links</h2>
+<table>
+  <tr>
+    <th>Helper</th>
+    <th>Result</th>
+  </tr>
+  <tr>
+    <td>link_to planners_path</td>
+    <td><%= link_to planners_path %></td>
+  </tr>
+  <tr>
+    <td>link_to planners_url</td>
+    <td><%= link_to planners_url %></td>
+  </tr>
+  <tr>
+    <td>link_to "Planners URL", planners_url</td>
+    <td><%= link_to "Planners URL", planners_url %></td>
+  </tr>
+  <tr>
+    <td>link_to "Google", "http://google.ca"</td>
+    <td><%= link_to "Google", "http://google.ca" %></td>
+  </tr>
+  <tr>
+    <td>link_to :planners</td>
+    <td><%= link_to :planners %></td>
+  </tr>
+  <tr>
+    <td>link_to "New Planner", [:new, :planner]</td>
+    <td><%= link_to "New Planner", [:new, :planner] %></td>
+  </tr>
+  <tr>
+    <td>link_to "New Planner", :new_planner</td>
+    <td><%= link_to "New Planner", :new_planner %></td>
+  </tr>
+  <tr>
+    <td>link_to "First Planner", Planner.first </td>
+    <td><%= link_to "First Planner", Planner.first %></td>
+  </tr>
+  <tr>
+    <td>link_to "Edit First Planner", [:edit, Planner.first] </td>
+    <td><%= link_to "Edit First Planner", [:edit, Planner.first] %></td>
+  </tr>
+  <tr>
+  <td>link_to 'Destroy', Planner.first, method: :delete, data: { confirm: 'Are you sure?' }</td>
+  <td><%= link_to 'Destroy', Planner.first, method: :delete, data: { confirm: 'Wait, are you drunk again? Are you sure this is a good idea?  That shirt wasnt a good idea.  Maybe you should rethink this.' } %></td>
+  </tr>
+</table>
