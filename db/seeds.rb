@@ -9,6 +9,7 @@ Event.destroy_all
 Planner.destroy_all
 
 joel = Planner.create name: 'Joel Shinness Events', photo_url: 'http://joelshinness.com/assets/img/avatars/avatar.jpg'
+
 joel.events.create name: 'Impromptu Dance', date: 3.hours.from_now
 joel.events.create name: 'Hackathon', date: 6.days.from_now
 joel.events.create name: 'Next Year\'s Hackathon', date: 1.year.from_now

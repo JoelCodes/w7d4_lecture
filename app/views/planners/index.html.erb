@@ -41,9 +41,10 @@
     <td>new_planner_path</td>
     <td><%= new_planner_path %></td>
   </tr>
+  <% if Planner.any? %>
   <tr>
-    <td>planner_path(1)</td>
-    <td><%= planner_path(1) %></td>
+    <td>planner_path(Planner.first.id)</td>
+    <td><%= planner_path(Planner.first) %></td>
   </tr>
   <tr>
     <td>planner_path(Planner.first)</td>
@@ -53,6 +54,7 @@
     <td>edit_planner_path(Planner.first)</td>
     <td><%= edit_planner_path(Planner.first) %></td>
   </tr>
+  <% end %>
   <tr>
     <td>planners_url</td>
     <td><%= planners_url %></td>
@@ -93,6 +95,7 @@
     <td>link_to "New Planner", :new_planner</td>
     <td><%= link_to "New Planner", :new_planner %></td>
   </tr>
+  <% if Planner.any? %>
   <tr>
     <td>link_to "First Planner", Planner.first </td>
     <td><%= link_to "First Planner", Planner.first %></td>
@@ -105,4 +108,5 @@
   <td>link_to 'Destroy', Planner.first, method: :delete, data: { confirm: 'Are you sure?' }</td>
   <td><%= link_to 'Destroy', Planner.first, method: :delete, data: { confirm: 'Wait, are you drunk again? Are you sure this is a good idea?  That shirt wasnt a good idea.  Maybe you should rethink this.' } %></td>
   </tr>
+  <% end %>
 </table>
